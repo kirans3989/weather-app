@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gradient-to-br from-blue-50 to-indigo-50 min-h-screen text-gray-800 antialiased;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-lg border border-white/20 shadow-xl;
+  }
+  
+  .weather-icon {
+    @apply transition-all duration-300 hover:scale-110;
+  }
+
+  .search-input {
+    @apply w-full px-4 py-3 pl-12 pr-4 text-gray-700 bg-white/70 backdrop-blur-sm border border-gray-200 
+           rounded-xl focus:border-blue-400 focus:ring-2 focus:ring-blue-100 focus:outline-none 
+           transition-all duration-300 placeholder:text-gray-400;
+  }
+
+  .location-button {
+    @apply w-full px-4 py-3 text-left hover:bg-blue-50 focus:outline-none focus:bg-blue-50 
+           transition-colors first:rounded-t-lg last:rounded-b-lg flex items-center space-x-3;
+  }
+
+  .weather-background {
+    @apply fixed inset-0 -z-10 transition-opacity duration-1000;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .weather-background::after {
+    content: '';
+    @apply absolute inset-0 bg-black/20 backdrop-blur-sm;
+  }
+
+  .weather-background.clear {
+    background-image: url('https://images.unsplash.com/photo-1601297183305-6df142704ea2?auto=format&fit=crop&w=1920&q=80');
+  }
+
+  .weather-background.clouds {
+    background-image: url('https://images.unsplash.com/photo-1534088568595-a066f410bcda?auto=format&fit=crop&w=1920&q=80');
+  }
+
+  .weather-background.rain {
+    background-image: url('https://images.unsplash.com/photo-1519692933481-e162a57d6721?auto=format&fit=crop&w=1920&q=80');
+  }
+
+  .weather-background.snow {
+    background-image: url('https://images.unsplash.com/photo-1491002052546-bf38f186af56?auto=format&fit=crop&w=1920&q=80');
+  }
+
+  .weather-background.thunderstorm {
+    background-image: url('https://images.unsplash.com/photo-1605727216801-e27ce1d0cc28?auto=format&fit=crop&w=1920&q=80');
+  }
+
+  .weather-background.mist {
+    background-image: url('https://images.unsplash.com/photo-1543968996-ee822b8176ba?auto=format&fit=crop&w=1920&q=80');
+  }
+}
+
+.fade-enter {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.fade-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 300ms, transform 300ms;
+}
