@@ -53,6 +53,21 @@ docker-compose down
 
 The application will be available at `http://localhost:80`
 
+## Deploy Weather Application in Kuberenetes
+
+1. Build the EKS cluster
+
+2. Create the Secret: Run the following command, replacing <API_KEY_VALUE> with your actual weather API key. 
+```bash
+kubectl create secret generic weather-api-secret --from-literal=WEATHER_API_KEY=<API_KEY_VALUE>
+```
+3. Create the pods, go to the Conainer folder under Weather-app registery folder. 
+```bash
+kubectl apply -f .
+```
+
+The application will be available at `http://Frontend_EKS_Loadbalancere:80`
+
 ## Development Without Docker
 
 1. Install dependencies:
