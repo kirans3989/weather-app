@@ -68,7 +68,7 @@ kubectl apply -f .
 
 The application will be available at `http://Frontend_EKS_Loadbalancere:80`
 
-![Weather Appllication](weather-app/Weather Application.jpg)
+![Weather Appllication](weather-app/Weather_Application.jpg)
 
 ## Development Without Docker
 
