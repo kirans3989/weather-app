@@ -68,6 +68,8 @@ kubectl apply -f .
 
 The application will be available at `http://Frontend_EKS_Loadbalancere:80`
 
+weather-app/Weather Application.jpg
+
 ## Development Without Docker
 
 1. Install dependencies:
